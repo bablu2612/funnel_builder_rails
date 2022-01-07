@@ -1,0 +1,17 @@
+<table class="table" id="data-table">
+<thead>
+  <tr>
+    <th>Page Name<i class="fa fa-angle-down"></i></th>
+    <th>Page View<i class="fa fa-angle-down"></i></th>
+  </tr>
+</thead>
+    <tbody>
+        <%@pages.each do |page|%>    
+            <tr role="row" class="odd">
+                <td><%=page.name? ? page.name : "No Records Found"%></td>
+                
+                <td><%= page.view %></td>
+                </tr>
+        <%end%>
+    </tbody>
+</table>

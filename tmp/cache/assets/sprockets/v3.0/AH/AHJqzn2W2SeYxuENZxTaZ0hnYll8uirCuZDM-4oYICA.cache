@@ -1,0 +1,14 @@
+I"›(function() {
+  App.notifications = App.cable.subscriptions.create("NotificationsChannel", {
+    connected: function() {},
+    disconnected: function() {},
+    received: function(data) {
+      $('#notificationList').prepend("" + data.notification);
+      $('#counter').text("" + data.counter);
+      $("#dataTable").dataTable().fnDestroy();
+      return $("#dataTable").dataTable();
+    }
+  });
+
+}).call(this);
+:ET

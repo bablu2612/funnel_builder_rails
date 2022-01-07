@@ -1,0 +1,98 @@
+<div class="col-sm-9  col-md-10  main">
+    <div class="static_page_main usermanagement_main">
+        <div class="static_page_management">
+            <h1>User Management</h1>
+        </div>
+        <div class="usermanagement_main_inner">
+            <div class="static_page_management_table usermanagement_table funnel_management">
+                <table class="table" id="data-table">
+                    <thead>
+                        <tr>
+                            <th>User Pick<i class="fa fa-angle-down"></i></th>
+                            <th>User Name<i class="fa fa-angle-down"></i></th>
+                            <th>Email<i class="fa fa-angle-down"></i></th>
+                            <th>No. of Funnels<i class="fa fa-angle-down"></i></th>
+                            <th>Status<i class="fa fa-angle-down"></i></th>
+                            <th>Block_Status<i class="fa fa-angle-down"></i></th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @users.each do |user| %>
+                            <%if user.role != "admin"%>
+                                <tr>
+                                    <td><div class="profile_img_main"><img src="<%= user.image? ? user.image : "/assets/admin/profile-img.jpg" %>" alt="profile_img"></div></td>
+                                    <td><a href="<%= edit_admin_user_path(user) %>" >
+                                        <%if user.f_name != nil || user. l_name != nil%>
+                                            <%=user.f_name.capitalize %> <%=user.l_name%>
+                                        <%else%>
+                                            No records found
+                                        <%end%>
+                                    </a></td>
+                                    <td><%= user.email? ? user.email : "No records found" %></td>
+                                    <td><a href="<%= admin_funnels_path(id:user.id) %>"><%=user.funnels.count%></a></td>
+                                    <td><%=user.email_confirmed != nil ? "Active" : "Inactive"%></td>
+
+                                    <td> <button type="button" class="btn" id="<%= user.id %>"><%=user.block_status == "unblock" ? "block" : "unblock"%></button></td>
+
+                                </tr>
+                            <%end%>
+                        <%end%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+
+
+ $(".btn").on("click", function(){
+           var id = $(this).attr("id");
+         var name =  $(this).text();
+         $.ajax({
+            url:'/funnel/block_unblock',
+            type:'post',
+           
+            data: {"id" : id, "block_status":name},
+            success:function (data) {
+                            
+            if(name == "block")
+                    {
+                        $("#"+id).text("unblock");
+                    }
+                  if(name == "unblock")
+
+                    {
+                        $("#"+id).text("block");
+                  }
+            },
+            error: function (request, error) {
+                console.log(arguments);
+                alert(" Can't do because: " + error);
+            }
+          });
+});
+
+        $('#data-table').DataTable( {
+            "ordering": true,
+            "info":     false,
+            dom: 'Bfrtip',
+            "language": {
+                "lengthMenu": '_MENU_ bản ghi trên trang',
+                    "search": '<i class="fa fa-search search-icon"></i>',
+                    "searchPlaceholder": "Search"
+            },
+            "lengthMenu": [[10,10, 25, 50, -1], [10,10, 25, 50, "All"]],
+            "bDestroy": true
+        });
+
+    });
+
+
+
+
+
+  
+</script>

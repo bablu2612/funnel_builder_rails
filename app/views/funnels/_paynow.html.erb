@@ -1,0 +1,18 @@
+
+<%@attributes = ElementAttribute.where(page_element_id: element.id)%>
+<%@styles = ElementStyle.where(page_element_id: element.id)%>
+<<%=element.field%> 
+<%@attributes.each do |attr|%>
+    <%=attr.attribute_name%>="<%=attr.attribute_value%>"
+<%end%>
+style="
+<%@styles.each do |style|%>
+    <%=style.style%>:<%=style.value%>;
+<%end%>
+">
+<%= link_to '<button type="button">Pay</button>'.html_safe, checkout_create_path(:id => element.value), method: "post", remote:true %>
+
+</paynow>
+
+
+

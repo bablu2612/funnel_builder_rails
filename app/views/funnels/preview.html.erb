@@ -1,0 +1,32 @@
+
+<style>
+ .alert{
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+}
+</style>
+<div class="container-flude" style="background:<%=@preview.background%>;background-repeat: no-repeat;background-size: 100% 100%;">
+<%=render "/layouts/message.html.erb"%>
+<center>
+    <%@sections.each do |section|%>
+        <section <% SecAttribute.where(section_id: section.id).each do |att|%><%=att.attri%>="<%=att.value%>" <%end%> style="<% Style.where(section_id: section.id).each do |style|%><%=style.style%>:<%=style.value%>; <%end%>">
+            <%Container.where(section_id: section.id).each do |container|%>
+                <div <% SecAttribute.where(container_id: container.id).each do |att|%><%=att.attri%>="<%=att.value%>" <%end%> style="<% Style.where(container_id: container.id).each do |style|%><%=style.style%>:<%=style.value%>; <%end%>">
+                    <%Row.where(container_id: container.id).each do |row|%>
+                        <div <% SecAttribute.where(row_id: row.id).each do |att|%><%=att.attri%>="<%=att.value%>" <%end%> style="<% Style.where(row_id: row.id).each do |style|%><%=style.style%>:<%=style.value%>; <%end%>">
+                            <%Column.where(row_id: row.id).each do |col|%>
+                                <div <% SecAttribute.where(column_id: col.id).each do |att|%><%=att.attri%>="<%=att.value%>" <%end%> style="<% Style.where(column_id: col.id).each do |style|%><%=style.style%>:<%=style.value%>; <%end%>">
+                                    <%PageElement.where(column_id: col.id).each do |element|%>
+                                        <%=render "/funnels/#{element.field}.html.erb",element: element%>
+                                    <%end%>
+                                </div>
+                            <%end%>
+                        </div>
+                    <%end%>
+                </div>
+            <%end%>
+        </section>
+    <%end%>
+</center>
+</div>

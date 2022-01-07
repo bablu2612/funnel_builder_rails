@@ -1,0 +1,48 @@
+<div class="col-sm-9  col-md-10  main">
+    <div class="static_page_main usermanagement_main">
+        <div class="static_page_management">
+            <h1>Notification Management</h1>
+        </div>
+        <div class="usermanagement_main_inner">
+            <div class="static_page_management_table usermanagement_table funnel_management">
+                <table class="table" id="data-table">
+                    <thead>
+                        <tr>
+                            <th>Notification<i class="fa fa-angle-down"></i></th>
+                            <th>Date<i class="fa fa-angle-down"></i></th>
+                            <th>Action<i class="fa fa-angle-down"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody id="notificationList">
+                        <% if !@notifications.nil?%>
+                            <% @notifications.each do |notification| %>
+                            <tr id="notification_<%=notification.id%>">
+                                <td  style="<%if notification.status == 0 %>font-weight:700 !important; <%end%>"><%= notification.event? ? notification.event : "No records found" %></td>
+                                <td  style="<%if notification.status == 0 %>font-weight:700; <%end%>"><%= notification.created_at %></td>
+                                <td  style="<%if notification.status == 0 %>font-weight:700; <%end%>"><a id="notification_read" class="action-btn" data-id="<%=notification.id%>" href="javascript:void(0)">Read</a>&nbsp;<a id="notification_delete" class="action-btn" data-id="<%=notification.id%>" href="javascript:void(0)">Delete</a></td>
+                            </tr>
+                            <%end%>
+                        <%end%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('#data-table').DataTable( {
+            "ordering": false,
+            "info":     false,
+            dom: 'Bfrtip',
+            "language": {
+                "lengthMenu": '_MENU_ bản ghi trên trang',
+                    "search": '<i class="fa fa-search search-icon"></i>',
+                    "searchPlaceholder": "Search"
+            },
+            "lengthMenu": [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]],
+            "bDestroy": true
+        });
+    });
+</script>
+

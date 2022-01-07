@@ -1,0 +1,2 @@
+module PageColumnsHelper
+end

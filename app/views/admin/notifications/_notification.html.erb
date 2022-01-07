@@ -1,0 +1,5 @@
+<tr id="notification_<%=notification.id%>">
+    <td  style="<%if notification.status == 0 %>font-weight:700 !important; <%end%>"><%= notification.event? ? notification.event : "No records found" %></td>
+    <td  style="<%if notification.status == 0 %>font-weight:700; <%end%>"><%= notification.created_at %></td>
+    <td  style="<%if notification.status == 0 %>font-weight:700; <%end%>"><a id="notification_read" class="action-btn" data-id="<%=notification.id%>" href="javascript:void(0)">Read</a>&nbsp;<a id="notification_delete" class="action-btn" data-id="<%=notification.id%>" href="javascript:void(0)">Delete</a></td>
+</tr>

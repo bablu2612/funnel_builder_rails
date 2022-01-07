@@ -1,0 +1,36 @@
+<div class="col-sm-9  col-md-10  main">
+    <a href="<%=admin_funnels_path%>" class="back_button"><i class="fa fa-arrow-left" aria-hidden="true"></i>BACK</a>
+  <div class="static_page_main">
+    <div class="static_page_management">
+      <h1>Funnels Details</h1>
+    </div>
+    <div class="funnel_details_table static_page_management_table">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td data-column="Name:"><%=@funnel.name? ? @funnel.name.capitalize : "No records found"%></td>
+          </tr>
+          <tr>
+            <td data-column="Type of Funnel:"><%=@funnel.user.email? ? @funnel.user.email : "No records found"%></td>
+          </tr>
+          <tr>
+            <td data-column="Customed Web Address:">Salesteam.com</td>
+          </tr>
+          <tr>
+            <td data-column="Number of Pages:"><%=@funnel.pages.count%> </td>
+          </tr>
+           <tr>
+            <td data-column="See Pages:"> <a class="pages-link" href="<%=admin_page_path(@funnel.id)%>">Click</a></td>
+          </tr>
+         
+          <tr>
+            <td data-column="Contacts:">157</td>
+          </tr>
+        </tbody>
+      </table>
+      <%# <div class="download_icon">
+          <img src="/assets/admin/download_icon.png" alt="download-icon">
+      </div> %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<%= form_for :password, local: true do |form| %>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "submit",:formaction => verify_path%>
+  </div>
+<% end %>

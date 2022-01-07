@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Page Columns</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @page_columns.each do |page_column| %>
+      <tr>
+        <td><%= link_to 'Show', page_column %></td>
+        <td><%= link_to 'Edit', edit_page_column_path(page_column) %></td>
+        <td><%= link_to 'Destroy', page_column, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Page Column', new_page_column_path %>

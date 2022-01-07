@@ -1,0 +1,8 @@
+
+<%@attributes = ElementAttribute.where(page_element_id: element.id)%>
+<%@styles = ElementStyle.where(page_element_id: element.id)%>
+<<%=element.field%> 
+<%@attributes.each do |attri|%>
+    <%=attri.attribute_name%>="<%=attri.attribute_value%>"
+<%end%>
+style="<%@styles.each do |style|%><%=style.style%>:<%=style.value%>;<%end%>padding:10px;"><%=element.value%></p>

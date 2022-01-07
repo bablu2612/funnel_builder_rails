@@ -1,0 +1,47 @@
+<div class="col-sm-9  col-md-10  main">
+    <div class="static_page_main usermanagement_main">
+        <div class="static_page_management">
+            <h1>Reports Management</h1>
+        </div>
+        <div class="usermanagement_main_inner">
+            <div class="static_page_management_table usermanagement_table funnel_management">
+                <table class="table" id="data-table">
+                    <thead>
+                        <tr>
+                            <th>Page Name<i class="fa fa-angle-down"></i></th>
+                            <th>Funnel Name<i class="fa fa-angle-down"></i></th>
+                            <th>Reports<i class="fa fa-angle-down"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%if !@pages.nil?%>
+                            <% @pages.each do |page| %>
+                                <tr>
+                                    <td><%= page.name? ? page.name : "No records found" %></td>
+                                    <td><%= page.funnel.name? ? page.funnel.name : "No records found" %></td>
+                                    <td><a href="<%=admin_report_path(page.id)%>">Click</a></td>
+                                </tr>
+                            <%end%>
+                        <%end%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('#data-table').DataTable( {
+            "ordering": false,
+            "info":     false,
+            dom: 'Bfrtip',
+            "language": {
+                "lengthMenu": '_MENU_ bản ghi trên trang',
+                    "search": '<i class="fa fa-search search-icon"></i>',
+                    "searchPlaceholder": "Search"
+            },
+            "lengthMenu": [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]],
+            "bDestroy": true
+        });
+    });
+</script>

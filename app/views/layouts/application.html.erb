@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Pocket Funnel</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "bootstrap.min" %>
+    <%= favicon_link_tag asset_path('favicon.png') %>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'rails.validations', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'bootstrap.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'customvalidations.js', 'data-turbolinks-track': 'reload' %>
+
+    <script src="https://js.stripe.com/v3"></script>
+
+
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    
+  </head>
+  <%=render "/layouts/message.html.erb"%>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

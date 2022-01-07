@@ -1,0 +1,998 @@
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('fonts/CenturyGothic-Bold.eot');
+    src: url('fonts/CenturyGothic-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/CenturyGothic-Bold.woff2') format('woff2'),
+        url('fonts/CenturyGothic-Bold.woff') format('woff'),
+        url('fonts/CenturyGothic-Bold.ttf') format('truetype'),
+        url('fonts/CenturyGothic-Bold.svg#../fonts/CenturyGothic-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('fonts/CenturyGothic.eot');
+    src: url('fonts/CenturyGothic.eot?#iefix') format('embedded-opentype'),
+        url('fonts/CenturyGothic.woff2') format('woff2'),
+        url('fonts/CenturyGothic.woff') format('woff'),
+        url('fonts/CenturyGothic.ttf') format('truetype'),
+        url('fonts/CenturyGothic.svg#../fonts/CenturyGothic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('fonts/CenturyGothic-BoldItalic.eot');
+    src: url('fonts/CenturyGothic-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('fonts/CenturyGothic-BoldItalic.woff2') format('woff2'),
+        url('fonts/CenturyGothic-BoldItalic.woff') format('woff'),
+        url('fonts/CenturyGothic-BoldItalic.ttf') format('truetype'),
+        url('fonts/CenturyGothic-BoldItalic.svg#../fonts/CenturyGothic-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('fonts/CenturyGothic-Italic.eot');
+    src: url('fonts/CenturyGothic-Italic.eot?#iefix') format('embedded-opentype'),
+        url('fonts/CenturyGothic-Italic.woff2') format('woff2'),
+        url('fonts/CenturyGothic-Italic.woff') format('woff'),
+        url('fonts/CenturyGothic-Italic.ttf') format('truetype'),
+        url('fonts/CenturyGothic-Italic.svg#../fonts/CenturyGothic-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+.login_page_out{    background: url(/assets/admin/login_background.jpg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    background-position: center center;}
+.login_main{position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius:8px;width:862px;box-shadow: 0px 0px 21px rgba(37,59,73,0.21);}
+	.login_banner_section img.img-responsive {
+     border-radius: 8px 0px 0px 8px;
+    width: 100%;
+}
+.login_logo_div {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    left: 50%;
+    top: 23%;
+}
+.pad_0{padding:0px;}
+.login_form {
+    padding: 100px 53px 0px 60px;
+}
+.login_form h1 {
+    margin: 0px;
+    font-size: 39px;
+    font-family: 'Century Gothic';
+    font-weight: bold;
+    margin-bottom: 45px;
+	    letter-spacing: 2px;
+}
+.login_form .form-group .form-control {
+height: 50px;
+    background: #fcfcfc;
+    border: 1px solid #cfd2d5;
+    box-shadow: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #4c4c4c;
+    font-family: 'Century Gothic';
+    font-weight: normal;
+    padding-left: 65px;
+    background-image: none;
+	    letter-spacing: 2px;
+}
+.login_form .form-group {
+    margin-bottom: 33px;
+    position: relative;
+}
+/* The container */
+.login_form .checkbox {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+}
+
+/* Hide the browser's default checkbox */
+.login_form .checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.login_form .checkbox .checkmark {
+        position: absolute;
+    top: 3px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    border: 1px solid #cbcbcb;
+    border-radius: 2px;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.login_form .checkbox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.login_form .checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.login_form .checkbox .checkmark:after {
+    left: 4px;
+    top: 0px;
+    width: 5px;
+    height: 11px;
+    border: solid #d5d17a;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.login_form .checkbox label {
+    font-size: 14px;
+    color: #1d2b37;
+    font-family: 'Century Gothic';
+    font-weight: normal;
+	    letter-spacing: 2px;
+}
+.login_form .checkbox label {
+    padding-left: 28px;
+}
+.forget_password.pull-right a {
+    font-size: 14px;
+    color: #898a8a;
+    font-family: 'Century Gothic';
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+.below_fields {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+.login_form input.btn.btn-default {
+       background: #d5d17a;
+    color: #000;
+    text-shadow: none;
+    border: 0px;
+    font-size: 23px;
+    text-transform: uppercase;
+    margin-top: 45px;
+    box-shadow: none;
+    font-weight: bold;
+    font-family: 'Century Gothic';
+    padding: 0px 80px;
+    height: 52px;
+    text-align: center;
+}
+.login_form input.btn.btn-default:disabled {
+    opacity: 1;
+    cursor: default;
+}
+.login_form span.input_icons {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login_form span.input_icons i.fa {
+    color: #1d2b37;
+    font-size: 23px;
+}
+.login_form span.input_icons:after {
+    content: "";
+    border-right: 1px solid #cfd2d5;
+    height:18px;
+    position: absolute;
+    right: 0;
+}
+
+.login_form .form-group .form-control::placeholder,.date_new .form-control::placeholder, .user_search .form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #4c4c4c;
+}
+
+.login_form .form-group .form-control:-ms-input-placeholder,.date_new .form-control:-ms-input-placeholder,.user_search .form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #4c4c4c;
+}
+
+.login_form .form-group .form-control::-ms-input-placeholder,.date_new .form-control:-ms-input-placeholder,.user_search .form-control:-ms-input-placeholder { /* Microsoft Edge */
+  color: #4c4c4c;
+}
+.form-control:focus{box-shadow:none;}
+a:hover{text-decoration:none;}
+.btn:focus, .btn:active{outline:0;}
+.forget_password.pull-right a:hover {
+    color: #d5d17a!important;
+}
+nav.navbar.navbar-inverse.navbar-fixed-top {
+    background: url(/assets/admin/header-dashboard.jpg);
+    margin: 0;
+    background-size: 100% 100%;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.13);
+}
+.navbar-header {
+    background: rgba(29,43,55,0.9);
+    width: 320px;
+}
+a.navbar-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    height: 100px;
+}
+
+nav.navbar.navbar-inverse ul li i.fa.fa-bell-o,nav.navbar.navbar-inverse ul li i.fa.fa-user {
+    border: 1px solid #1d2b37;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+        padding: 9px;
+    text-align: center;
+    font-size: 20px;
+    color: #1d2b37;
+    background: #fff;
+}
+
+
+nav.navbar.navbar-inverse ul li i.fa.fa-user
+{
+background:transparent;	
+}
+nav.navbar.navbar-inverse ul li i.fa.fa-bell-o {
+    margin-right: 27px;
+}
+ul.nav.navbar-nav.navbar-right {
+    margin: 0;
+    width: 280px;
+}
+nav.navbar.navbar-inverse ul li .name_user {
+    color: #041c37;
+    font-size: 16px;
+    font-family: 'Century Gothic';
+    font-weight: bold;
+    padding: 0px 10px;
+}
+ul.nav.navbar-nav.navbar-right {
+    margin: 0;
+    width: 382px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+ul.nav.navbar-nav.navbar-right button.btn.btn-primary.dropdown-toggle
+ {
+    background-image: none;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+    color: #243c72;
+    text-shadow: none;
+    border-left: 1px solid #1d2b37;
+    border-radius: 0;
+    padding-left: 10px;
+}
+ul.nav.nav-sidebar a {
+    font-size: 18px;
+    font-family: 'Century Gothic';
+    color: #fff;
+    font-weight: normal;
+    padding: 18px 40px;
+}
+
+.sidebar ul.nav.nav-sidebar li.active a 
+{
+    background: rgb(251,244,136);
+    background: -moz-linear-gradient(top, rgba(251,244,136,1) 0%, rgba(29,43,55,1) 75%);
+    background: -webkit-linear-gradient(top, rgba(251,244,136,1) 0%,rgba(29,43,55,1) 75%);
+    background: linear-gradient(to right, rgba(251,244,136,1) 0%,rgba(29,43,55,1) 75%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbf488', endColorstr='#1d2b37',GradientType=0 );
+	border-left: 3px solid#fff;
+}
+body.dashboard {
+    padding-top: 100px;
+}
+.sidebar ul.nav.nav-sidebar li i {
+    padding-right: 25px;
+}
+.sidebar ul.nav.nav-sidebar li {
+    position: relative;
+    display: block;
+    border-bottom: 1px solid #2b3b49;
+}
+ul.nav.nav-sidebar > li > a:hover, ul.nav.nav-sidebar > li > a:focus {
+    text-decoration: none;
+    background-color: #eee;
+    background: rgb(251,244,136);
+    background: -moz-linear-gradient(top, rgba(251,244,136,1) 0%, rgba(29,43,55,1) 75%);
+    background: -webkit-linear-gradient(top, rgba(251,244,136,1) 0%,rgba(29,43,55,1) 75%);
+    background: linear-gradient(to right, rgba(251,244,136,1) 0%,rgba(29,43,55,1) 75%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbf488', endColorstr='#1d2b37',GradientType=0 );
+}
+footer.text-center {
+    background: #334452;
+    z-index: 99999;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    color: #fff;
+    font-family: 'Century Gothic';
+    font-weight: normal;
+    letter-spacing: 2px;
+    padding: 30px 0px;
+    z-index: 99999999999999999999;
+    left: 0;
+}
+.static_page_management h1 
+{
+    font-size: 24px;
+    color: #4c4c4c;
+    font-family: 'Century Gothic';
+    font-weight: bold;
+    margin: 0px;
+}
+.static_page_management
+{
+    box-shadow: inset 0px -25px 30px -15px rgba(0,0,0,0.16);
+    padding: 23px 33px;
+}
+.static_page_management_table {
+    padding: 45px 33px 80px;
+    position: relative;
+    clear: both;
+}
+.static_page_main {
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.16);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    clear: both;
+}
+.static_page_main table.table thead tr>th {
+    background: #1d2b37;
+    color: #fff;
+    font-size: 22px;
+    font-family: 'Century Gothic';
+    font-weight: normal;
+    letter-spacing: 1px;
+    padding: 15px 32px;
+}
+.static_page_management_table tbody {
+    border-bottom: 1px solid #e7e7e7;
+}
+.static_page_main table.table tbody tr>td 
+{
+    font-size: 16px;
+    font-family: 'Century Gothic';
+    font-weight: normal;
+    letter-spacing: 1px;
+    padding: 15px 32px;
+    color: #4c4c4c;
+    border-right: 1px solid #e7e7e7;
+    border-top: 0;
+    border-left: 1px solid #e7e7e7;
+}
+.static_page_management_table table.table {
+    margin: 0px;
+}
+.static_page_management_table table tr:nth-child(odd) td {
+    background: #f6f6f6;
+}
+.static_page_management_table table tr:nth-child(even) td {
+    background: #eaeaea;
+}
+.static_page_main table.table thead tr th:first-child {
+    border-radius: 5px 0px 0px 0px;
+	-moz-border-radius:5px 0px 0px 0px;
+	-webkit-border-radius:5px 0px 0px 0px;
+}
+.static_page_main table.table thead tr th:last-child {
+    border-radius: 0px 5px 0px 0px;
+	-moz-border-radius:0px 5px 0px 0px;
+	-webkit-border-radius:0px 5px 0px 0px;
+}
+
+.static_page_management_table table tr:last-child td:first-child {
+    border-radius:0px 0px 0px 5px;
+	-moz-border-radius:0px 0px 0px 5px;
+	-webkit-border-radius:0px 0px 0px 5px;
+}
+.static_page_management_table table tr:last-child td:last-child {
+    border-radius:0px 0px 5px 0px;
+	-moz-border-radius:0px 0px 5px 0px;
+	-webkit-border-radius:0px 0px 5px 0px;
+}
+.static_page_management_table table tr td:first-child {
+    font-weight: bold!important;
+}
+
+ul.nav.navbar-nav.navbar-right .dropdown-menu > li > a 
+{
+letter-spacing: 1px;
+    color: #4c4c4c;
+    font-size: 14px;
+    font-family: 'Century Gothic';
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 0;
+    margin-bottom: 10px;
+}
+ul.nav.navbar-nav.navbar-right .dropdown-menu > li > a:hover, ul.nav.navbar-nav.navbar-right .dropdown-menu > li > a:focus
+{
+background-image:none;
+background-color:transparent;
+}
+ul.nav.navbar-nav.navbar-right .dropdown-menu {
+    top: 45px;
+}
+ul.nav.navbar-nav.navbar-right .dropdown-menu > li > a i.fa {
+    color: #1d2b37;
+    padding-right: 5px;
+    font-size: 15px;
+}
+ul.nav.navbar-nav.navbar-right .dropdown-menu > li:last-child a
+{
+margin-bottom: 0px;	
+}
+
+ul.nav.navbar-nav.navbar-right ul.dropdown-menu {
+    border: 1px solid #d8d8d8;
+    border-radius: 4px!important;
+    padding: 20px 30px 20px 14px;
+}
+.static_page_main table.table tbody tr>td>a {
+    color: #4c4c4c;
+    font-weight: 600;
+    text-decoration: underline;
+}
+.funnel_management i.fa {
+    padding-left: 5px;
+    font-size: 18px;
+}
+.static_page_management_table.funnel_management table tr td:first-child {
+    font-weight: normal!important;
+    color: #1d2b37;
+    text-decoration: underline;
+}
+.static_page_management_table.funnel_management.template_management table tr td:first-child {
+    font-weight: normal!important;
+    color: #1d2b37;
+    text-decoration: none;
+}
+/* .profile_img_main {
+    text-align: center;
+} */
+
+
+.static_page_main.usermanagement_main {
+    float: left;
+    width: 100%;
+}
+
+.static_page_main.usermanagement_main table.table thead tr th:first-child,.static_page_main.usermanagement_main table tr:last-child td:first-child {
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+}
+
+.profile_img_main img {
+    width:55px;
+    height:55px;
+    border: 2px solid #fff;
+    max-width: 100%;
+}
+section.login_main.change_password {
+    max-width: 575px;
+}
+.login_inner.change_password_inner .login_form {
+    padding: 45px 35px 45px 35px;
+}
+
+section.login_main.change_password .login_form button.btn.btn-default,.user-detail_main .login_form button.btn.btn-default
+{
+    margin-top: 17px;
+    padding: 0px 33px;
+}
+.change_password_new {
+    float: right;
+    width: calc(100% - 320px);
+    position: relative;
+    box-sizing: border-box;
+    height: calc(100vh - 180px);
+}
+	.funnel_details_table table { 
+	  	width: 100%; 
+	}
+	.funnel_details_table table, .funnel_details_table thead, .funnel_details_table tbody, .funnel_details_table th, .funnel_details_table td, .funnel_details_table tr { 
+		display: block; 
+	}
+	.funnel_details_table thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+.funnel_details_table.static_page_management_table table tbody{border:0px;}
+	.funnel_details_table.static_page_management_table table tr:last-child td:last-child {
+    border-radius: 0px 0px 5px 5px;
+    -moz-border-radius: 0px 0px 5px 5px;
+    -webkit-border-radius: 0px 0px 5px 5px;
+}
+.funnel_details_table.static_page_management_table table tr:first-child td:last-child {
+    border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+}
+	.funnel_details_table td { 
+		position: relative;
+		padding-left:25%!important; 
+	}
+
+	.funnel_details_table td:before { 
+    position: absolute;
+    top: 15px;
+    left: 55px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    content: attr(data-column);
+    color: #000;
+    font-weight: bold;
+	}
+.funnel_details_table.static_page_management_table table.table tbody tr>td {
+    border-right: 0;
+    border-top: 0;
+    border-left: 0;
+	    border: 1px solid #eeeeee;
+}
+a.back_button {
+    border: 1px solid #1d2b37;
+    font-size: 18px;
+    color: #1d2b37;
+    font-family: 'Century Gothic';
+    font-weight: bold;
+    padding: 8px 18px;
+    border-radius: 5px;
+    display: block;
+    float: left;
+    clear: both;
+    margin-bottom: 20px;
+}
+
+a.back_button i.fa.fa-arrow-left {
+    padding-right: 10px;
+}
+.download_icon {
+	    position: absolute;
+    bottom: 85px;
+    right: 55px;
+    cursor: pointer;
+}
+.report_management_main h2{font-size: 22px;
+    color: #4c4c4c;
+    font-family: 'Century Gothic';
+    font-weight: bold;
+    margin: 0px 0px 15px;}
+.static_page_management_table.funnel_management.Repot_management_top {
+    padding: 30px 33px 0px;
+}
+.pull-right.date_picker_main {
+    padding-right: 23px;
+}
+.date_new {
+    float: left;
+    padding: 0px 15px;
+    box-sizing: border-box;
+	    position: relative;
+}
+.date_new label {
+    font-size: 18px;
+    color: #4c4c4c;
+    font-family: 'Century Gothic';
+    font-weight: bold;
+    float: left;
+    margin: 5px 0px 0px;
+    padding-right: 15px;
+}
+.pull-right.date_picker_main {
+    padding: 30px 23px 0px 0px;
+}
+.date_new .form-control {
+    display: inline;
+    /* width: auto;
+    float: left; */
+    border: 1px solid #d4d4d4;
+    font-size: 15px;
+    color: #4c4c4c;
+    font-family: 'Century Gothic';
+    font-weight: normal;
+    max-width: 156px;
+}
+.date_new span.input_icons {
+    position: absolute;
+    right: 25px;
+    top: 1px;
+    font-size: 23px;
+    color: #1d2b37;
+    border-left: 1px solid #d4d4d4;
+    padding-left: 12px;
+}
+.static_page_main.report_management_main table tr td:first-child {
+    text-decoration: none;
+}
+.user-detail_main_inner .login_form {
+    padding: 40px 25px 50px 25px;
+    background-color: #f6f6f6;
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+}
+.user-profile img {
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    max-width: 100%;
+}
+.user-profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.user-detail_main .login_form .form-group {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.login_inner.user-detail_main_inner {
+    padding: 42px 32px 53px 32px;
+    float: left;
+    width: 100%;
+}
+.funnel_subdomain_div label {
+    font-size: 24px;
+    color: #1d2b37;
+    font-family: 'Century Gothic';
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.funnel_subdomain_div .login_form .form-group
+{
+margin:0px;	
+}
+.funnel_subdomain_div .login_form span.input_icons {
+    top: 44px;
+}
+.main.user-detail_main {
+    padding: 80px 100px 135px 62px;
+}
+.main.user-detail_main .static_page_main {
+    float: left;
+    width: 100%;
+    clear: both;
+}
+.login_form .form-group select.form-control
+{
+    background: url(../img/down-arrow.png);
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-position: 95% 18px;
+
+}
+.faq_content h2 {
+    font-size: 19px;
+    color: #4c4c4c;
+    font-family: 'Century Gothic';
+    font-weight: bold;
+    margin: 0px 0px 25px;
+}
+.faq_content p {
+    font-size: 15px;
+    color: #4c4c4c;
+    font-family: 'Century Gothic';
+    font-weight: normal;
+    line-height: 30px;
+}
+.faq_main_inner {
+    padding: 40px 32px 32px;
+}
+.faq_main {
+        border-radius: 5px;
+    background: #f6f6f6;
+	 -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.faq_img img {
+    width: 100%;
+}
+.faq_content {
+    padding-bottom: 20px;
+}
+.faq-top{padding: 40px 32px 40px;}
+.faq-top button.btn.btn-default {
+    background: #d5d17a;
+    color: #000;
+    text-shadow: none;
+    border: 0px;
+    font-size: 23px;
+    text-transform: uppercase;
+    margin-top: 17px;
+    padding: 0px 33px;
+    box-shadow: none;
+    font-weight: bold;
+    font-family: 'Century Gothic';
+    height: 52px;
+    text-align: center;
+}
+.faq-top {
+    padding: 40px 32px 30px;
+}
+
+
+.user_search input#search {
+    height: 40px;
+    background: transparent;
+    border: 1px solid #cfd2d5;
+    box-shadow: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #4c4c4c;
+    font-family: 'Century Gothic';
+    font-weight: normal;
+    background-image: none;
+    letter-spacing: 2px;
+}
+.user_search {
+    float: right;
+    width: 320px;
+    position: relative;
+    margin-bottom: 25px;
+}
+.user_search i {
+    position: absolute;
+    top: 10px;
+    right: 22px;
+    color: #1d2b37;
+    font-size: 19px;
+}
+@media only screen and (max-width:1480px)
+{
+    .static_page_main table.table {
+        display: block;
+        overflow-x: auto;
+    }
+    .static_page_main th, .static_page_main td {
+        white-space: nowrap;
+    }
+}
+@media only screen and (min-width:1030px)
+{
+.login_main{position: absolute;
+    width: 1030px;}	
+}
+@media only screen and (max-width:992px)
+{
+.login_form {
+    padding: 40px 25px 0px 25px;
+}
+.login_main {
+    width: 720px;
+}
+
+}
+@media only screen and (max-width:767px)
+{
+.login_form {
+    padding: 0px 0px 40px 0px;
+    text-align: center;
+}
+.login_inner {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.login_form button.btn.btn-default {
+    font-size: 20px;
+    margin-top: 25px;
+}
+.login_form .form-group {
+    margin-bottom: 20px;
+}
+.login_main {
+    width: 100%;
+    position: initial;
+    transform: inherit;
+    border: 0px;
+	    padding: 25px 15px;
+}
+.forget_password.pull-right a {
+    letter-spacing: 1px;
+}
+.login_form h1 {
+    font-size: 25px;
+    margin-bottom: 35px;
+}
+.forget_password.pull-right a,.login_form .checkbox label{font-size:11px;}
+.login_form .checkbox label{padding-left:17px;}
+.login_banner_section img.img-responsive {
+    border-radius: 0;
+}
+}
+
+.alert{
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+}
+div#data-table_paginate {
+    float: right;
+    margin-top: 24px;
+    right:31px;
+    position: absolute;
+    bottom: 30px;
+}
+a#data-table_previous {
+    padding: 9px;
+    background: #334452;
+    color: white;
+    border-radius: 4px;
+    font-family: 'Century Gothic';
+
+}
+a#data-table_next {
+    padding: 9px;
+    background: #334452;
+    color: white;
+    border-radius: 4px;
+    font-family: 'Century Gothic';
+
+}
+a.paginate_button {
+    padding: 9px;
+    color: white;
+    background: #334452;
+    margin-left: 2px;
+    border-radius: 4px;
+    font-family: 'Century Gothic';
+    cursor: pointer;
+
+}
+.navbar-inverse .navbar-nav>li>a{
+    display:inline-block;
+    padding: 10px 0px;
+}
+div.static_page_management_table label{
+    position: absolute;
+    top: -123px;
+    right: 0;
+    padding-right: 34px;
+}
+i.fa.fa-search.search-icon {
+    position: absolute;
+    top: 27%;
+    right: 0;
+    width: 56px;
+    font-size: 18px;
+}
+.login_form a.btn.btn-default{   
+     background: #d5d17a;
+    color: #000;
+    text-shadow: none;
+    border: 0px;
+    font-size: 23px;
+    text-transform: uppercase;
+    margin-top: 45px;
+    box-shadow: none;
+    font-weight: bold;
+    font-family: 'Century Gothic';
+    padding: 9px 80px;
+    height: 52px;
+}
+/* #######################################remove apin button of input type integer ############################*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin:0;
+}
+input[type=search] {
+    height: 38px;
+    width: 114%;
+    background: transparent;
+    border: 1px solid #cfd2d5;
+    box-shadow: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #4c4c4c;
+    font-family: 'Century Gothic';
+    font-weight: normal;
+    background-image: none;
+    letter-spacing: 2px;
+    padding: 0px 27px 0px 9px;
+}
+span.ellipsis {
+  
+    font-size: 21px;
+}
+a.pages-link {
+    z-index: 99999;
+    position: relative;
+}
+.validation-error{
+    color:red;
+}
+
+i.down-arrow {
+   display: inline;
+}
+.report_download_icon {
+    position: absolute;
+    top: -57px;
+    right: 100px;
+    cursor: pointer;
+}
+span#counter {
+    background: #1d2a36;
+    border-radius: 5px;
+    color: white;
+    padding: 3px 6px 3px 5px;
+    font-weight: 700;
+    position: absolute;
+    bottom: 28px;
+    left: -10px;
+    /* z-index: -1; */
+}
+a.action-btn {
+    background: #1d2a36;
+    padding: 2px 7px 2px 7px;
+    border-radius: 4px;
+    /* font-size: 13px; */
+    font-weight: 400 !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+tr{
+    border: hidden !important;
+}
+a.paginate_button.current {
+    background: #1d2b37;
+}
+td.dataTables_empty {
+    text-decoration: none !important;
+}
+.dataTable td {
+    text-decoration: none !important;
+}
+

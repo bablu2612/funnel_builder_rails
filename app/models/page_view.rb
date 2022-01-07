@@ -1,0 +1,3 @@
+class PageView < ApplicationRecord
+ 
+end

@@ -1,0 +1,61 @@
+<h1>Editing User</h1>
+
+<%= form_with(model: @user, local: true,validate: true ) do |form| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :f_name %>
+    <%= form.text_field :f_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :l_name %>
+    <%= form.text_field :l_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address ,value: @user_detail.address%>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.number_field :phone ,value: @user_detail.phone%>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city ,value: @user_detail.city%>
+  </div>
+
+  <div class="field">
+    <%= form.label :province %>
+    <%= form.text_field :province ,value: @user_detail.province%>
+  </div>
+
+  <div class="field">
+    <%= form.label :zipcode %>
+    <%= form.number_field :zipcode ,value: @user_detail.zipcode%>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country ,value: @user_detail.country%>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>

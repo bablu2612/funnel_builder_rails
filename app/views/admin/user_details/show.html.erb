@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @user_detail.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @user_detail.phone %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @user_detail.city %>
+</p>
+
+<p>
+  <strong>Province:</strong>
+  <%= @user_detail.province %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @user_detail.zipcode %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @user_detail.country %>
+</p>
+
+<%= link_to 'Edit', edit_admin_user_detail_path(@user_detail.user_id) %> |
+<%= link_to 'Back', admin_user_details_path %>

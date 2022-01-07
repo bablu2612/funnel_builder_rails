@@ -1,0 +1,48 @@
+<div class="col-sm-9  col-md-10  main">
+    <div class="static_page_main usermanagement_main">
+        <div class="static_page_management">
+            <h1>Statics Pages</h1>
+        </div>
+        <div class="usermanagement_main_inner">
+            <div class="static_page_management_table usermanagement_table funnel_management">
+                <table class="table" id="data-table">
+                    <thead>
+                        <tr>
+                            <th class="active"><a href="<%=admin_faq_path %>">FAQ</a></th>
+                            <th><a href="<%=admin_contactus_path %>">Contact Us</a></th>
+                            <th><a href="<%=admin_privacypolicy_path %>">Privacy Policy</a></th>
+                            <th><a href="<%=admin_tc_path %>">TC</a></th>
+
+                        </tr>
+                    </thead>
+                   
+                </table>
+               
+            </div>
+            <%= form_for @stactics,:url => {:action => 'create',method: "post"} do |f| %>
+                <input value="privacy" type="hidden" name="field" >
+   
+  
+                <div>
+                <%= f.label :tc, 'Content For '+@content %>
+               
+               </div>
+               <div>
+                
+                <%= text_area_tag 'tc', nil, :rows=>50, :cols=>30,:id=>"my_editor" %>
+               </div>
+               
+              
+              <div>
+             
+                <%= f.submit "Submit" %>
+             
+              </div>
+              <% end %>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.ckeditor.com/ckeditor5/19.1.1/classic/ckeditor.js"></script>
+<script>
+ClassicEditor.create(document.getElementById('my_editor'));
+      </script>

@@ -1,0 +1,79 @@
+<div class="col-sm-9  col-md-10  main user-detail_main">
+  <div class="static_page_main"> 
+    <div class="static_page_management">
+      <h1>User Details</h1>
+    </div>
+    <div class="login_inner user-detail_main_inner">
+      <div class="row">
+        <div class="col-md-6 col-lg-6 col-sm-6">
+          <div class="login_form">
+            <div class="user-profile">
+              <img src="<%= @user.image? ? @user.image : "/assets/admin/profile-img.jpg" %>" alt="user-profile">
+            </div>
+            <%= form_with(model: [:admin, @user], local: true) do |form| %>
+              <% if @user.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+                  <ul>
+                  <% @user.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
+              <div class="form-group">
+                <%= form.text_field :f_name ,:class => "form-control",:placeholder => "Name"%>
+                <span class="input_icons"><i class="fa fa-user" aria-hidden="true"></i></span>
+              </div>
+              <div class="form-group">
+                <%= form.text_field :address ,:value => @user_detail.address,:class => "form-control",:placeholder => "Street Address" %>
+                <span class="input_icons"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <%= form.text_field :city ,:value => @user_detail.city,:placeholder => "City",:class => "form-control"%>
+                    <span class="input_icons"><i class="fa fa-map-pin" aria-hidden="true"></i></span>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <%= form.text_field :province ,:value => @user_detail.province,:class => "form-control",:placeholder => "State/Province"%>
+                    <span class="input_icons"><i class="fa fa-map"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <%= form.number_field :zipcode ,:value => @user_detail.zipcode,:class => "form-control",:placeholder => "Zip"%>
+                    <span class="input_icons"><i class="fa fa-pencil-square" aria-hidden="true"></i></span>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <%= form.text_field :country ,:value => @user_detail.country,:class => "form-control",:placeholder => "Country"%>
+                    <span class="input_icons"><i class="fa fa-globe"></i></span>
+                  </div>
+                </div>
+              </div>
+              <%= form.submit "Save",:class => "btn btn-default user_edit_submit" %>
+            <%end%>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6 funnel_subdomain_div">
+          <div class="login_form">
+            <div class="form-group">
+              <label>Click Funnels Subdomain</label>
+              <input type="text" class="form-control" id="subdomain" placeholder="Subdomain" name="subdomain">
+              <span class="input_icons"><i class="fa fa-soundcloud" aria-hidden="true"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,17 @@
+<%= form_with(model: page_column, local: true) do |form| %>
+  <% if page_column.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(page_column.errors.count, "error") %> prohibited this page_column from being saved:</h2>
+
+      <ul>
+      <% page_column.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

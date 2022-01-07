@@ -1,0 +1,15 @@
+<%= form_for :session, local: true do |form| %>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :password %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "login",:formaction => signin_path%>
+  </div>
+<% end %>

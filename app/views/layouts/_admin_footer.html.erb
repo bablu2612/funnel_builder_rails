@@ -1,0 +1,21 @@
+</div>
+<footer class="text-center">@ 2020 | All Rights Reserved</footer>
+<script> // Change password validations ====================================== = = = = = =  =  =  =  =  
+$(document).ready(function(){ 
+    $( "form#password_form" ).submit(function() {
+        var status = true;
+        $(this).find('input[type="password"]').each(function(){
+            if ($(this).val() == ''){
+                $(this).css("border","1px solid red");
+                $(this).parent().find('label').remove();
+                $(this).parent().append("<label class=validation-error>This field is required<label>");
+                status = false;
+            }else{
+                $(this).parent().find('label').remove();
+                $(this).removeAttr("style");
+            }
+        });
+        return status;
+    });
+});
+</script>

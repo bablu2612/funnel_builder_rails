@@ -1,0 +1,11 @@
+
+<div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+            <li class="<% if controller.controller_name == "users" %>active<%end%>"><a href="<%=admin_users_path%>"><i class="fa fa-users" aria-hidden="true"></i>User Management</a></li>
+            <li class="<% if controller.controller_name == "funnels" %>active<%end%>"><a href="<%=admin_funnels_path%>"><i class="fa fa-database" aria-hidden="true"></i>Funnels Management</a></li>
+            <li class="<% if controller.controller_name == "notifications"%>active<%end%>"><a href="<%=admin_notifications_path%>"><i class="fa fa-envelope" aria-hidden="true"></i>Notifications</a></li>
+            <li class="<% if controller.controller_name == "reports" %>active<%end%>"><a href="<%=admin_reports_path%>"><i class="fa fa-book" aria-hidden="true"></i>Report Management</a></li>
+            <li class="<% if controller.controller_name == "statics" %>active<%end%>"><a href="<%=admin_statics_path%>"><i class="fa fa-wpforms"></i>Static Pages</a></li>
+        </ul>
+    </div>

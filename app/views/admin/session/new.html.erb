@@ -1,0 +1,39 @@
+<div class="login_page_out">
+    <section class="login_main">
+      <div class="login_inner">
+        <div class="col-md-6 col-lg-5 col-sm-6 pad_0">
+          <div class="login_banner_section">
+          <div class="login_logo_div">
+              <img src="/assets/admin/pocket_funnels_logo_login.png" alt="logo_img_login.png" class="img-responsive"/>
+          </div>
+          <img src="/assets/admin/login_lft_img.jpg"alt="login_banner_img" class="img-responsive"/>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-7 col-sm-6 pad_0">
+          <div class="login_form">
+            <h1>Admin Login</h1>
+            <%= form_for :session, local: true do |form| %>
+              <div class="form-group">
+                <%= form.text_field :email ,:class => "form-control",:id => "text" ,:placeholder => "Username" %>
+                <span class="input_icons"><i class="fa fa-user" aria-hidden="true"></i></span>
+              </div>
+              <div class="form-group">
+              <%= form.password_field :password ,:class => "form-control",:id => "pwd" ,:placeholder => "Password" %>
+                <span class="input_icons"><i class="fa fa-lock" aria-hidden="true"></i></span>
+              </div>
+              <div class="below_fields">
+                <div class="checkbox pull-left">
+                  <label><input type="checkbox" name="remember">Remember Me<span class="checkmark"></span></label>
+                </div>
+                <div class="forget_password pull-right">
+                  <a href="<%=forget_path%>">Forgot your password?</a>
+                </div>
+              </div>
+              <%= form.submit "login",:formaction => admin_signin_path,:class => "btn btn-default"%>
+            <%end%>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+

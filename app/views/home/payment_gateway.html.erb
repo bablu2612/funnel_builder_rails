@@ -1,0 +1,18 @@
+<center>
+
+<h1>Payment Gateways</h1>
+
+<%if logged_in? %>
+
+        <% if @user.stripe_user_id.present? %>
+
+            
+            <%=button_to "disconnect_stripe",disconnect_path%>
+
+          <% else %>
+
+          <%= link_to image_tag("stripe_button.png" , height: '50', width: '350'), stripe_button_link %>
+         <% end %>
+<br>
+     <% end %>  
+</center>

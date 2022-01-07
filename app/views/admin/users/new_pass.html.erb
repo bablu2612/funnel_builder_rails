@@ -1,0 +1,26 @@
+<div class="change_password_new">
+    <section class="login_main change_password">
+        <div class="login_inner change_password_inner">
+            <div class="static_page_management">
+                <h1>Change Password</h1>
+            </div>
+            <div class="login_form">
+                <%= form_for :password,local: :true ,:html => { :id => "password_form" } do |form| %>
+                    <div class="form-group">
+                        <%= form.password_field :old_password ,:class => "form-control old_pass pass" ,:placeholder => "Old Password",id: "oldPass"%>
+                        <span class="input_icons"><i class="fa fa-lock" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="form-group">
+                        <%= form.password_field :password ,:class => "form-control new_pass pass" ,:placeholder => "New Password",id: "newPass" %>
+                        <span class="input_icons"><i class="fa fa-lock" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="form-group">
+                        <%= form.password_field :password_confirmation ,:class => "form-control con_pass pass" ,:placeholder => "Confirm Password",id: "conPass"%>
+                        <span class="input_icons"><i class="fa fa-lock" aria-hidden="true"></i></span>
+                    </div>
+                    <%= form.submit "Update",:formaction => admin_change_pass_path,:class => "btn btn-default pass_submit"%>
+                <%end%>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,5 @@
+Hi <%= @user.f_name %>,
+
+ To confirm your email for password reset click the URL below.
+
+<%= reset_url(@user.password_reset_token) %>

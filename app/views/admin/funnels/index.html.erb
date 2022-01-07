@@ -1,0 +1,53 @@
+<div class="col-sm-9  col-md-10  main">
+  <div class="static_page_main">
+    <div class="static_page_management">
+      <h1>Funnel Management</h1>
+    </div>
+    <div class="static_page_management_table funnel_management">
+      <table class="table" id="data-table">
+        <thead>
+          <tr>
+            <th>Funnel Name<i class="fa fa-angle-down"></i></th>
+            <th>User Name<i class="fa fa-angle-down"></i></th>
+            <th>Email<i class="fa fa-angle-down"></i></th>
+            <th>No. of Pages<i class="fa fa-angle-down"></i></th>
+            <th>Status<i class="fa fa-angle-down"></i></th>
+          </tr>
+        </thead>
+        <tbody>
+        
+          <% @funnels.each do |funnel|%>
+            <tr>
+              <td><a href="<%=admin_funnel_path(funnel.id)%>"><%=funnel.name? ? funnel.name.capitalize : "No records found"%></a></td>
+              <td><%if funnel.user.f_name != nil || funnel.user. l_name != nil%>
+                      <%=funnel.user.f_name.capitalize %> <%=funnel.user.l_name%>
+                  <%else%>
+                      No records found
+                  <%end%>
+              </td>
+              <td><%=funnel.user.email? ? funnel.user.email : "No records found"%></td>
+              <td><%=funnel.pages.size%></td>
+              <td>Active</td>
+            </tr>
+          <%end%>			
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function() {
+    $('#data-table').DataTable( {
+      "ordering": true,
+      "info":     false,
+      dom: 'Bfrtip',
+      "language": {
+        "lengthMenu": '_MENU_ bản ghi trên trang',
+          "search": '<i class="fa fa-search search-icon"></i>',
+          "searchPlaceholder": "Search"
+      },
+      "lengthMenu": [[10,10, 25, 50, -1], [10,10, 25, 50, "All"]],
+      "bDestroy": true
+    });
+  });
+</script>

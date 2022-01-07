@@ -1,0 +1,26 @@
+<table class="table" id="data-table">
+<thead>
+  <tr>
+    <th>Funnel Name<i class="fa fa-angle-down"></i></th>
+    <th>User Name<i class="fa fa-angle-down"></i></th>
+    <th>Email<i class="fa fa-angle-down"></i></th>
+    <th>No. of Pages<i class="fa fa-angle-down"></i></th>
+  </tr>
+</thead>
+<tbody>
+
+  <% @funnels.each do |funnel|%>
+    <tr>
+      <td><a href="<%=show_path(:id=>funnel.id)%>"><%=funnel.name? ? funnel.name.capitalize : "No records found"%></a></td>
+      <td><%if funnel.user.f_name != nil || funnel.user. l_name != nil%>
+              <%=funnel.user.f_name.capitalize %> <%=funnel.user.l_name%>
+          <%else%>
+              No records found
+          <%end%>
+      </td>
+      <td><%=funnel.user.email? ? funnel.user.email : "No records found"%></td>
+      <td><%=funnel.pages.size%></td>
+    </tr>
+  <%end%>			
+</tbody>
+</table>

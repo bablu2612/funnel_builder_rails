@@ -1,0 +1,3 @@
+class PageCode < ApplicationRecord
+ 
+end

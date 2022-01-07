@@ -1,0 +1,57 @@
+<style>
+div#data-table_wrapper {
+    overflow-x: scroll;
+}
+</style>
+<div class="col-sm-9  col-md-10  main">
+    <div class="static_page_main usermanagement_main">
+        <div class="static_page_management">
+            <h1>Report Management</h1>
+        </div>
+        <div class="usermanagement_main_inner">
+            <div class="static_page_management_table usermanagement_table funnel_management">
+                <table class="table data-scrol" id="data-table">
+                    <thead>
+                        <tr>
+                        <%if !@headings.nil? %>
+                            <%@headings.each do |heading|%>
+                                <th ><%=heading.column_name%><i class="fa fa-angle-down down-arrow"></i></th>
+                            <%end%>
+                        <%end%>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <%if !@forms.nil?%>
+                        <%@forms.each do |form|%>
+                        <tr>
+                            <%PageColumn.where(page_form_id: form.id).each do |heading|%>
+                            <td><%=heading.column_value%></td>
+                            <%end%>
+                        </tr>
+                        <%end%>
+                    <%end%>
+                    </tbody>
+                </table>
+                <div class="report_download_icon" title="Download Reports PDF">
+                    <a href="<%=admin_report_path(params[:id], format: :pdf)%>"><img src="/assets/admin/download_icon.png" alt="download-icon"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('#data-table').DataTable( {
+            "ordering": false,
+            "info":     false,
+            dom: 'Bfrtip',
+            "language": {
+                "lengthMenu": '_MENU_ bản ghi trên trang',
+                    "search": '<i class="fa fa-search search-icon"></i>',
+                    "searchPlaceholder": "Search"
+            },
+            "lengthMenu": [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]],
+            "bDestroy": true,
+        });
+    });
+</script>

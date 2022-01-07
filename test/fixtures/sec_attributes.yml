@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pearent_id: MyString
+  attri: MyString
+  value: MyString
+
+two:
+  pearent_id: MyString
+  attri: MyString
+  value: MyString

@@ -1,0 +1,49 @@
+<div class="col-sm-9  col-md-10  main">
+  <div class="static_page_main">
+    <div class="static_page_management">
+      <h1>Funnel Management</h1>
+    </div>
+    <div class="static_page_management_table funnel_management">
+      <table class="table" id="data-table">
+        <thead>
+          <tr>
+            <th>Page Name<i class="fa fa-angle-down"></i></th>
+            <th>Page Screen Shot<i class="fa fa-angle-down"></i></th>
+            <th>Page Link<i class="fa fa-angle-down"></i></th>
+          </tr>
+        </thead>
+            <tbody>
+                <%@pages.each do |page|%>    
+                    <tr role="row" class="odd">
+                        <td><a href="<%=request.base_url%>/funnel_url/<%=page.id%>"><%=page.name? ? page.name : "No Records Found"%></a></td>
+                        <td>
+                            <div class="profile_img_main">
+                                <a href="<%=page.screenshot? ? page.screenshot : "javascript:void(0)" %>">
+                                    <img src="<%=page.screenshot? ? page.screenshot : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk3tIoN8xFb5O6v9T9SgFWpp3ps6mfSbLblzh6zh24fUR4cjPDBg" %>" alt="profile_img">
+                                </a>
+                            </div>
+                        </td>
+                        <td><a href="<%=request.base_url%>/funnel_url/<%=page.id%>">Click</a></td>
+                        </tr>
+                <%end%>
+            </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function() {
+    $('#data-table').DataTable( {
+      "ordering": false,
+      "info":     false,
+      dom: 'Bfrtip',
+      "language": {
+        "lengthMenu": '_MENU_ bản ghi trên trang',
+          "search": '<i class="fa fa-search search-icon"></i>',
+          "searchPlaceholder": "Search"
+      },
+      "lengthMenu": [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]],
+      "bDestroy": true
+    });
+  });
+</script>

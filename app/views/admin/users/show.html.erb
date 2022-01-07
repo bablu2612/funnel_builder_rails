@@ -1,0 +1,66 @@
+<div class="col-sm-9  col-md-10  main user-detail_main">
+    <div class="static_page_main">
+      <div class="static_page_management">
+        <h1>User Details</h1>
+      </div>
+      <div class="login_inner user-detail_main_inner">
+      <div class="row">
+      <div class="col-md-6 col-lg-6 col-sm-6">
+        <div class="login_form">
+            <div class="user-profile">
+              <img src="<%= user.image? ? user.image : "/assets/admin/profile-img.jpg" %>" alt="user-profile">
+          </div>
+          <form action="/action_page.php">
+            <div class="form-group">
+              <input type="text" class="form-control" id="text" value="<%=@user.f_name+" "+@user.l_name%>" placeholder="Name" name="text" disabled>
+              <span class="input_icons"><i class="fa fa-user" aria-hidden="true"></i></span>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="pwd" value="<%=@user_detail.address%>" placeholder="Street Address" name="address" disabled>
+              <span class="input_icons"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                      <input type="text" value="<%=@user_detail.city%>" class="form-control" disabled>
+                    <span class="input_icons"><i class="fa fa-map-pin" aria-hidden="true"></i></span>
+                    </div>
+              </div>
+              <div class="col-sm-6">
+                  <div class="form-group">
+                    <input type="text" value="<%=@user_detail.province%>" class="form-control" disabled>
+                    <span class="input_icons"><i class="fa fa-map"></i></span>
+                    </div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                   <input type="text" value="<%=@user_detail.zipcode%>" class="form-control" disabled>
+                    <span class="input_icons"><i class="fa fa-pencil-square" aria-hidden="true"></i></span>
+                    </div>
+              </div>
+              <div class="col-sm-6">
+                  <div class="form-group">
+                    <input type="text" value="<%=@user_detail.country%>" class="form-control" disabled>
+                    <span class="input_icons"><i class="fa fa-globe"></i></span>
+                    </div>
+              </div>
+            </div>
+             <%=link_to "Edit",edit_admin_user_path,:class => "btn btn-default"%>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-6 col-sm-6 funnel_subdomain_div">
+          <div class="login_form">
+            <div class="form-group">
+              <label>Click Funnels Subdomain</label>
+            <input type="text" class="form-control" id="subdomain" placeholder="Subdomain" name="subdomain" disabled>
+            <span class="input_icons"><i class="fa fa-soundcloud" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

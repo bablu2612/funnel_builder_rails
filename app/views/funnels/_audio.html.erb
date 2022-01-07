@@ -1,0 +1,16 @@
+
+<%@attributes = ElementAttribute.where(page_element_id: element.id)%>
+<%@styles = ElementStyle.where(page_element_id: element.id)%>
+<audio controls 
+style="<%@styles.each do |style|%><%=style.style%>:<%=style.value%>;<%end%>">
+  <source 
+  <%@attributes.each do |attr|%>
+    <%=attr.attribute_name%>="<%=attr.attribute_value%>"
+<%end%> 
+type="audio/mpeg">
+  <source 
+  <%@attributes.each do |attr|%>
+    <%=attr.attribute_name%>="<%=attr.attribute_value%>"
+<%end%>
+ type="audio/ogg">
+</audio>

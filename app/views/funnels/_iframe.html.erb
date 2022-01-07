@@ -1,0 +1,10 @@
+
+<%@attributes = ElementAttribute.where(page_element_id: element.id)%>
+<%@styles = ElementStyle.where(page_element_id: element.id)%>
+<<%=element.field%> 
+<%@attributes.each do |attr|%>
+    <%=attr.attribute_name%>="<%=attr.attribute_value%>"
+<%end%>
+style="<%@styles.each do |style|%><%=style.style%>:<%=style.value%>;<%end%>">
+<<%=element.value%> 
+</iframe>
